@@ -15,6 +15,13 @@ end
 
 # Tasks
 
+desc 'Use buildx to make a multi-arch container without cache'
+task :cacheless do
+  puts "Building #{CONTAINER_NAME}"
+  sh %{ docker buildx build --no-cache --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME} .}
+  sh %{ docker pull #{CONTAINER_NAME} }
+end
+
 desc 'Use buildx to make a multi-arch container'
 task :multiarch_build do
   puts "Building #{CONTAINER_NAME}"
