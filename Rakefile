@@ -1,6 +1,7 @@
 task :default => [:usage]
 task :help => [:usage]
 task :build => [:multiarch_build]
+task :buildx => [:multiarch_build]
 task :b => [:multiarch_build]
 
 CONTAINER_NAME = 'unixorn/debian-py3'
