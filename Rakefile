@@ -34,3 +34,10 @@ desc 'Lint the Dockerfile'
 task :lint do
   sh %{ docker run --rm -i hadolint/hadolint < Dockerfile }
 end
+
+desc 'Use buildx to make a multi-arch container without using cache'
+task :cacheless do
+  puts "Building #{CONTAINER_NAME}"
+  sh %{ docker buildx build --no-cache --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME} .}
+  sh %{ docker pull #{CONTAINER_NAME} }
+end
