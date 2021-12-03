@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:11-slim
 LABEL maintainer="Joe Block <jpb@unixorn.net>"
 LABEL description="python3 on debian buster-slim"
 
