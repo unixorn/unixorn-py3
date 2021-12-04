@@ -1,6 +1,6 @@
 FROM debian:11-slim
 LABEL maintainer="Joe Block <jpb@unixorn.net>"
-LABEL description="python3 on debian buster-slim"
+LABEL description="python3 on debian bullseye-slim"
 
 RUN apt-get update && \
     apt-get install -y apt-utils ca-certificates --no-install-recommends && \
