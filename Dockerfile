@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get upgrade -y --no-install-recommends && \
     apt-get install -y --no-install-recommends python3-pip python3-dev && \
 		update-ca-certificates && \
-    python3 -m pip install --upgrade pip setuptools wheel && \
+    python3 -m pip install --upgrade --no-cache-dir pip setuptools wheel && \
 		rm -fr /tmp/* /var/lib/apt/lists/*
 
 CMD ["bash"]
